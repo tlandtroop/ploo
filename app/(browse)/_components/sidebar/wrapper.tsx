@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useIsClient } from "usehooks-ts";
 
 import { cn } from "@/lib/utils";
 import { useSidebar } from "@/store/use-sidebar";
@@ -13,12 +13,8 @@ interface WrapperProps {
 }
 
 export const Wrapper = ({ children }: WrapperProps) => {
-  const [isClient, setIsClient] = useState(false);
+  const isClient = useIsClient();
   const { collapsed } = useSidebar((state) => state);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
 
   if (!isClient)
     return (
