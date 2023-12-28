@@ -2,13 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { useSidebar } from "@/store/use-sidebar";
 import { Skeleton } from "@/components/ui/skeleton";
 import { UserAvatar } from "@/components/user-avatar";
-import { useSidebar } from "@/store/use-sidebar";
 import { LiveBadge } from "@/components/live-badge";
 
 interface UserItemProps {
@@ -31,7 +30,7 @@ export const UserItem = ({ username, imageUrl, isLive }: UserItemProps) => {
       variant="ghost"
       className={cn(
         "w-full h-12",
-        collapsed ? "justify-center" : "justify-start",
+        collapsed ? "justify-center" : "justfy-start",
         isActive && "bg-accent"
       )}
     >
